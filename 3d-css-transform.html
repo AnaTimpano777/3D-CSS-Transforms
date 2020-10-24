@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>3D Css Transforms</title>
+<style>
+body{
+    font-family: sans-serif;   
+}
+    
+section{
+    border: 5px dashed purple;
+    width: 500px;
+    height: 400px;
+    padding: 50px;
+    /* set the perspective of the viewer */
+    perspective: 300px;
+    /* set the position of the viewer */
+    perspective-origin: center;
+    /* determine if the children of the element are to exist in their own 3D space */
+    -webkit-transform-style: preserve-3d;
+}
+p {
+   height: 100px;
+   width: 100px;
+   color: white;
+   font-weight: bolder;
+   text-align: center;
+   background-color:mediumpurple;
+   display: inline-block;
+   transition-property: all;
+   transition-duration: 1s;
+   transition-timing-function: ease;  
+}
+    
+section:hover p#rx {
+    transform: rotateX(250deg);
+}
+    
+section:hover p#ry {
+    transform: rotateY(500deg);
+}
+    
+section:hover p#rxyz {
+    transform: rotate3d(1,1,1,450deg);
+}
+    
+section:hover p#txyz {
+    transform: translate3d(300px,250px,20px);
+}
+    
+p:nth-of-type(2) {
+    background-color:darkviolet;
+}
+  
+    
+p:nth-of-type(3) {
+    background-color:blueviolet;
+}
+    
+p:nth-of-type(4) {
+    background-color:purple;
+}
+       
+</style>   
+</head>
+ <body>
+    <h1>3D Css Transforms</h1>
+    <section>
+     <h2>RotateX and RotateY</h2>
+    <p id="rx">Rotate X.</p>
+    <p id="ry">Rotate Y.</p>
+    <p id="rxyz">Rotate xyz.</p>
+    <p id="txyz">Translate xyz.</p>
+     </section>
+    </body>    
+</html>
